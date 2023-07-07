@@ -2,26 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@keyframes breathing {
+  0%, 100% { background-color: rgb(255, 204, 204); } /* Light Pink */
+  10% { background-color: rgb(255, 230, 204); } /* Light Apricot */
+  20% { background-color: rgb(255, 255, 204); } /* Light Yellow */
+  30% { background-color: rgb(204, 255, 204); } /* Light Green */
+  40% { background-color: rgb(204, 255, 230); } /* Light Mint */
+  50% { background-color: rgb(204, 255, 255); } /* Light Cyan */
+  60% { background-color: rgb(204, 230, 255); } /* Light Sky Blue */
+  70% { background-color: rgb(204, 204, 255); } /* Light Lavender */
+  80% { background-color: rgb(230, 204, 255); } /* Light Lilac */
+  90% { background-color: rgb(255, 204, 255); } /* Light Orchid */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body{
+
+   animation: breathing 20s linear infinite;
+
+}
+
+.line {
+  animation: colorChange 1s infinite alternate;
+}
+ @keyframes colorChange {
+  0%,100% {
+  background-color: rgba(0, 0, 255, 0.450);
+  box-shadow: 0px 0px 15px rgb(27, 43, 216);
+
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.450);
+  box-shadow: 0px 0px 15px rgb(216, 27, 27);
+
+  }
+
+}
+
+.ox{
+  animation: changesize .03s ease-in;
+}
+@keyframes changesize {
+  0%{
+    @apply text-sm
+  }
+  100%{
+    @apply text-4xl md:text-5xl
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.notify {
+  animation: notify 1s;
+}
+
+@keyframes notify {
+  0% {
+    background-color:  #a8dadc;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #f1faee;
+    transform: scale(1.2);
+  }
+  100% {
+    background-color:  #a8dadc;
+    transform: scale(1);
+  }
 }
