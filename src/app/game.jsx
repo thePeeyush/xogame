@@ -40,11 +40,10 @@ export default function Game() {
     return check; // Return the flag
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     calculateWinner();
     checkFull();
-    }
-  ,[gamearray])
+  }, [gamearray]);
 
   const checkFull = () => {
     let count = 0; // Counter for empty cells
@@ -66,9 +65,8 @@ export default function Game() {
         setGamearray(newGameArray); // Update the game array
         setTurnX(!turnX); // Toggle the turn
       }
-    } 
+    }
   };
-
 
   const reload = () => {
     setGamearray(Array(9).fill(""));
@@ -95,7 +93,6 @@ export default function Game() {
           })}
         </div>
         <Line winIndex={winIndex} winner={winner} />
-        
       </div>
 
       <div className="flex justify-center items-center mt-20 mb-6">
@@ -105,17 +102,17 @@ export default function Game() {
       </div>
 
       <div className="flex flex-col justify-center w-full  items-center">
-          <div>
-            {winner !== "" || isFull ? (
-              <div className=" winner bg-white bg-opacity-40 rounded-md backdrop-blur-md w-full">
-                <Winnerbox winner={winner} />
-                <Drawbox winner={winner} isFull={isFull} />
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
+        <div>
+          {winner !== "" || isFull ? (
+            <div className=" winner bg-white bg-opacity-40 rounded-md backdrop-blur-md w-full">
+              <Winnerbox winner={winner} />
+              <Drawbox winner={winner} isFull={isFull} />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
+      </div>
     </>
   );
 }
