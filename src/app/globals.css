@@ -70,7 +70,7 @@ body:focus {
 
 @keyframes notify {
   0% {
-    background-color:  #a8dadc;
+    background-color:  #ede024;
     transform: scale(1);
   }
   50% {
@@ -78,7 +78,7 @@ body:focus {
     transform: scale(1.2);
   }
   100% {
-    background-color:  #a8dadc;
+    background-color:  #dbe6e6;
     transform: scale(1);
   }
 }
