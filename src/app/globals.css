@@ -74,7 +74,7 @@ body:focus {
     transform: scale(1);
   }
   50% {
-    background-color: #f1faee;
+    background-color: #53d428;
     transform: scale(1.2);
   }
   100% {
